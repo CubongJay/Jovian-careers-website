@@ -1,0 +1,36 @@
+<!DOCTYPE html>jovian-careers-website.cubongjay.repl.co
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jovian Careers</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+ 
+  
+</head>
+<body>
+  <h1 class="text-center text-lg text-red" >Jovian Careers</h2>
+  <img class="img-fluid" src="static/banner.jpg" width="350" height="350"/>
+  <h2>About Jovian</h2>
+  <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Varius vel pharetra vel turpis nunc. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Eget arcu dictum varius duis at consectetur lorem. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Pretium lectus quam id leo in vitae turpis. Vitae et leo duis ut. Velit egestas dui id ornare arcu. Sed augue lacus viverra vitae congue eu consequat ac felis. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere.</p>  
+  </div>
+  Hello there, you'll learn about the job openings at jovian here
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <div class="row">
+     {% for job in jobs %}
+      <div class="col-9">
+       
+        <h4>{{job['Title']}}</h4>
+        <b>Location: </b>{{ job['Location']}}</br>
+        {% if 'Salary' in job %}
+          <b>Salary: </b>{{job['Salary']}}
+        {% endif %}
+      </div>
+      <div class="col-3">
+        <button type="button" class="btn btn-outline-primary">Apply</button>
+      </div>
+         {% endfor %}
+  </div>
+  <button class="btn btn-prinmary btn-lg">Contact Us</button>
+</body>
+</html>
